@@ -1,152 +1,152 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>C*</title>
-  <style>
-    html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      word-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 1em;
-      }
-    }
-    @media print {
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-      font-size: 85%;
-      margin: 0;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>C*</title>
+<style>
+html {
+  line-height: 1.5;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  color: #1a1a1a;
+  background-color: #fdfdfd;
+}
+body {
+  margin: 0 auto;
+  max-width: 36em;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  hyphens: auto;
+  word-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9em;
+    padding: 1em;
+  }
+}
+@media print {
+  body {
+    background-color: transparent;
+    color: black;
+    font-size: 12pt;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3, h4 {
+    page-break-after: avoid;
+  }
+}
+p {
+  margin: 1em 0;
+}
+a {
+  color: #1a1a1a;
+}
+a:visited {
+  color: #1a1a1a;
+}
+img {
+  max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.4em;
+}
+h5, h6 {
+  font-size: 1em;
+  font-style: italic;
+}
+h6 {
+  font-weight: normal;
+}
+ol, ul {
+  padding-left: 1.7em;
+  margin-top: 1em;
+}
+li > ol, li > ul {
+  margin-top: 0;
+}
+blockquote {
+  margin: 1em 0 1em 1.7em;
+  padding-left: 1em;
+  border-left: 2px solid #e6e6e6;
+  color: #606060;
+}
+code {
+  font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+  font-size: 85%;
+  margin: 0;
+}
+pre {
+  margin: 1em 0;
+  overflow: auto;
+}
+pre code {
+  padding: 0;
+  overflow: visible;
+}
+.sourceCode {
+ background-color: transparent;
+ overflow: visible;
+}
+hr {
+  background-color: #1a1a1a;
+  border: none;
+  height: 1px;
+  margin: 1em 0;
+}
+table {
+  margin: 1em 0;
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+  margin-bottom: 0.75em;
+}
+tbody {
+  margin-top: 0.5em;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+}
+th {
+  border-top: 1px solid #1a1a1a;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+  padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+  margin-bottom: 4em;
+  text-align: center;
+}
+#TOC li {
+  list-style: none;
+}
+#TOC a:not(:hover) {
+  text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<![endif]-->
 </head>
 <body>
 <link rel="stylesheet" href="lib/codemirror.css">
@@ -156,34 +156,33 @@
 <script src="cx.js"></script>
 <script src="editor.js"></script>
 
-<div class="top-nav">
+<nav class="top-nav">
     <h1><a href="./">C*</a></h1>
     <div class="links">
-        <a href="./introduction.html">Documentation</a>
+        <a href="./introduction">Documentation</a>
         <a href="https://discord.gg/hsDbW9p" target="_blank">Discord</a>
         <a href="https://github.com/cx-language/cx" target="_blank">GitHub</a>
     </div>
-</div>
+</nav>
 <div class="side-nav">
     <ul>
-        <li><a href="./introduction.html">Introduction</a></li>
-        <li><a href="./hello-world.html">Hello world!</a></li>
-        <li><a href="./variables-and-constants.html">Variables and constants</a></li>
-        <li><a href="./functions.html">Functions</a></li>
-        <li><a href="./control-flow.html">Control flow</a></li>
-        <li><a href="./builtin-types.html">Builtin types</a></li>
-        <li><a href="./structs.html">Structs</a></li>
-        <li><a href="./list.html">List</a></li>
-        <li><a href="./strings.html">Strings</a></li>
-        <li><a href="./pointers.html">Pointers</a></li>
-        <li><a href="./nullable-types.html">Nullable types</a></li>
-        <li><a href="./enum-types.html">Enum types</a></li>
-        <li><a href="./iterators.html">Iterators</a></li>
-        <li><a href="./interfaces.html">Interfaces</a></li>
-        <li><a href="./generics.html">Generics</a></li>
-        <li><a href="./low-level-programming.html">Low-level programming</a></li>
-        <li><a href="./std.html">Standard library</a></li>
-        <!-- <li><a href="./spec.html">Specification</a></li> -->
+        <li><a href="./introduction">Introduction</a></li>
+        <li><a href="./hello-world">Hello world!</a></li>
+        <li><a href="./variables-and-constants">Variables and constants</a></li>
+        <li><a href="./functions">Functions</a></li>
+        <li><a href="./control-flow">Control flow</a></li>
+        <li><a href="./builtin-types">Builtin types</a></li>
+        <li><a href="./structs">Structs</a></li>
+        <li><a href="./list">List</a></li>
+        <li><a href="./strings">Strings</a></li>
+        <li><a href="./pointers">Pointers</a></li>
+        <li><a href="./nullable-types">Nullable types</a></li>
+        <li><a href="./enum-types">Enum types</a></li>
+        <li><a href="./iterators">Iterators</a></li>
+        <li><a href="./interfaces">Interfaces</a></li>
+        <li><a href="./generics">Generics</a></li>
+        <li><a href="./low-level-programming">Low-level programming</a></li>
+        <li><a href="./std">Standard library</a></li>
     </ul>
 </div>
 
@@ -192,9 +191,11 @@
     var link = document.querySelector(".side-nav a[href='./" + currentPage + "']");
     link.className = "active";
 </script>
+<main>
 <h1 id="generics">Generics</h1>
 <p>TODO</p>
 <h2 id="generic-constraints">Generic constraints</h2>
 <p>TODO</p>
+</main>
 </body>
 </html>

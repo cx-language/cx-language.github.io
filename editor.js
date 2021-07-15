@@ -21,13 +21,13 @@ function initializeCodeEditor(block) {
     }, 1);
 
     const runButton = document.createElement("button");
-    runButton.innerText = "▶\uFE0E";
+    runButton.innerText = "Run";
     runButton.className = "run";
-    editorWrapper.appendChild(runButton);
+    block.parentNode.appendChild(runButton);
 
     const output = document.createElement("div");
     output.className = "output";
-    editorWrapper.appendChild(output);
+    block.parentNode.appendChild(output);
 
     const stdout = document.createElement("div");
     stdout.className = "stdout";
@@ -46,10 +46,9 @@ function initializeCodeEditor(block) {
         var match;
         while ((match = regex.exec(output.innerText))) {
             var [, line, column, message, indent] = match;
-            console.log(match, indent);
             var node = document.createElement("div");
             node.appendChild(document.createTextNode(indent + "^ " + message));
-            node.className = "error";
+            node.classList.add("diagnostic", message.startsWith("warning") ? "warning" : "error");
             widgets.push(editor.addLineWidget(line - 1, node, true));
         }
     }
